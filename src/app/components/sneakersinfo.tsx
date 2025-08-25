@@ -9,6 +9,27 @@ export default function SneakersInfo() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div>
                         <Image
+                            src="/11.webp"
+                            alt="Sneakers"
+                            width={400}
+                            height={400}
+                            className="w-full h-auto rounded-lg shadow-lg"
+                        />
+                        <Image
+                            src="/13.webp"
+                            alt="Sneakers"
+                            width={400}
+                            height={400}
+                            className="w-full h-auto rounded-lg shadow-lg"
+                        />
+                        <Image
+                            src="/13.webp"
+                            alt="Sneakers"
+                            width={400}
+                            height={400}
+                            className="w-full h-auto rounded-lg shadow-lg"
+                        />
+                        <Image
                             src="/13.webp"
                             alt="Sneakers"
                             width={400}
