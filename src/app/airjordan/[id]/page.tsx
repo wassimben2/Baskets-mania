@@ -3,97 +3,80 @@ import React from 'react';
 import { useParams } from 'next/navigation';
 import Navbar from '../../components/navbar';
 import SneakersInfo from '../../components/sneakersinfo';
+import { s } from 'framer-motion/client';
 
-// Base de données des sneakers
+
 const sneakersData = {
   1: {
     name: "Air Jordan 1 High Lost and Found",
-    images: ["/8.webp", "/8.webp", "/8.webp"], 
-    description: "La Air Jordan 1 High Lost and Found revisite un classique avec des détails vintage authentiques. Inspirée des archives Jordan, cette paire offre un look rétro avec des finitions modernes.",
+    images: ["/Air Jordan 1 High Lost and Found/8.webp", "/Air Jordan 1 High Lost and Found/20.jpg", "/Air Jordan 1 High Lost and Found/21.jpg"], 
     originalPrice: 15000,
     currentPrice: 12800,
     currency: "DZD",
-    sizes: [40, 41, 42, 43, 44, ],
+    sizes: [36,37,38,39,40,41,42,43,44,45],
     isPromotion: true,
-    features: [
-      "Cuir véritable premium",
-      "Semelle en caoutchouc durable", 
-      "Col rembourré pour le confort",
-      "Design iconique Air Jordan"
-    ],
-    colorways: [
-      { name: "Chicago", color: "#DC143C" },
-      { name: "Black Toe", color: "#000000" }
-    ]
+    soldOutSizes: [41,42,43,44,45]
+  
   },
   2: {
     name: "Air Jordan 1 High 85",
-    images: ["/9.webp", "/9.webp", "/9.webp"],
-    description: "La Air Jordan 1 High 85 reproduit fidèlement la silhouette originale de 1985 avec des proportions authentiques et des matériaux premium.",
+    images: ["/Air Jordan 1 High 85/9.webp", "/Air Jordan 1 High 85/25.webp", "/Air Jordan 1 High 85/26.webp","/Air Jordan 1 High 85/27.webp"],
     originalPrice: 14000,
     currentPrice: 12500,
     currency: "DZD",
-    sizes: [40, 41, 42, 43, 44, 45, 46],
+    sizes: [36,37,38,39],
     isPromotion: true,
-    features: [
-      "Forme originale de 1985",
-      "Cuir premium",
-      "Semelle vintage",
-      "Logo Wings authentique"
-    ],
-    colorways: [
-      { name: "Neutral Grey", color: "#808080" },
-      { name: "Varsity Red", color: "#DC143C" }
-    ]
+   
   },
   3: {
     name: "Air Jordan 1 High Mocha", 
-    images: ["/10.webp", "/10.webp", "/10.webp"],
-    description: "La Air Jordan 1 High Mocha combine des tons terreux avec le design classique Jordan pour un look sophistiqué et polyvalent.",
+    images: ["/Air Jordan 1 High Mocha/10.webp", "/Air Jordan 1 High Mocha/28.jpg", "/Air Jordan 1 High Mocha/29.webp"],
     originalPrice: 14500,
     currentPrice: 12800,
     currency: "DZD", 
-    sizes: [40, 41, 42, 43, 44, 45, 46],
+    sizes: [36,37,38,39,40,41,43],
     isPromotion: true,
-    features: [
-      "Coloris Mocha unique",
-      "Matériaux premium", 
-      "Confort optimal",
-      "Style polyvalent"
-    ],
-    colorways: [
-      { name: "Mocha", color: "#8B4513" },
-      { name: "Sail", color: "#F5F5DC" }
-    ]
+    soldOutSizes: [41, 43]
+
   },
   4: {
     name: "Air Jordan 1 High X DIOR",
     images: ["/Air jordan X dior/11.webp", "/Air jordan X dior/15.webp", "/Air jordan X dior/16.webp","/Air jordan X dior/17.webp","/Air jordan X dior/18.webp","/Air jordan X dior/19.webp"],
-    description: "La collaboration exclusive entre Air Jordan et DIOR représente le summum du luxe et du style streetwear avec des finitions exceptionnelles.",
     originalPrice: 16000,
     currentPrice: 12800,
     currency: "DZD",
     sizes: [40, 41, 42, 43, 44, 45],
     isPromotion: true,
-    features: [
-      "Collaboration DIOR exclusive",
-      "Matériaux luxueux", 
-      "Finitions premium",
-      "Édition limitée"
-    ],
-    colorways: [
-      { name: "Grey/White", color: "#A9A9A9" },
-      { name: "Navy", color: "#000080" }
-    ]
-  }
-};
+    
+ 
+  },
+  5:{
+    name: "Air Jordan 1 high Stage haze",
+    images: ["/Air Jordan 1 high Stage haze/30.webp", "/Air Jordan 1 high Stage haze/31.webp", "/Air Jordan 1 high Stage haze/32.webp"],
+    currentPrice: 12500,
+    currency: "DZD",
+    sizes: [36,37,38,39,40,41,42,43,44,45],
+    isPromotion: true,
+    soldOutSizes:[40,45]
+    
+  },
+  6:{
+    name: "Jordan 1 low wolf grey",
+    images: ["/Jordan 1 low wolf grey/40.webp", "/Jordan 1 low wolf grey/41.webp", "/Jordan 1 low wolf grey/42.webp"],
+    originalPrice: 13500,
+    currentPrice: 12500,
+    currency: "DZD",
+    sizes: [37,38,39,40,41,42,43],
+    isPromotion: true,
+    soldOutSizes:[41]
+}
+}
 
 export default function SneakerDetailPage() {
   const params = useParams();
   const id = params.id as string;
   const sneaker = sneakersData[parseInt(id) as keyof typeof sneakersData];
 
-  // Si la sneaker n'existe pas
   if (!sneaker) {
     return (
       <div>
@@ -117,14 +100,14 @@ export default function SneakerDetailPage() {
       <SneakersInfo
         name={sneaker.name}
         images={sneaker.images}
-        description={sneaker.description}
+       
         originalPrice={sneaker.originalPrice}
         currentPrice={sneaker.currentPrice}
         currency={sneaker.currency}
         sizes={sneaker.sizes}
         isPromotion={sneaker.isPromotion}
-        features={sneaker.features}
-        colorways={sneaker.colorways}
+        soldOutSizes={sneaker.soldOutSizes} 
+      
       />
     </div>
   );

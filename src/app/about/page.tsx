@@ -1,15 +1,16 @@
-import { useParams } from "next/navigation";
-import Navbar from "../../components/navbar";
-import SneakersInfo from "../../components/sneakersinfo";
+'use client';
 
+import Navbar from "../components/navbar";
+import SneakersInfo from "../components/sneakersinfo";
+import { useParams } from "next/navigation";
 export default function ProductPage() {
   const params = useParams();
-  const id = Number(params.id); // conversion en number
+  const id = Number(params.id); 
 
   const products = {
     1: {
       name: "Air Jordan 1 Mid",
-      images: ["Air jordan X dior/11.webp", "/15.webp", "/16.webp"],
+      images: ["/11.webp", "/15.webp", "/16.webp"],
       description: "Sneakers tendance et confortables",
       originalPrice: 22000,
       currentPrice: 18000,
