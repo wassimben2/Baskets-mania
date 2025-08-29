@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import { useParams } from 'next/navigation';
-import Navbar from '../../components/navbar';
+import Navbar from '../../components/Navbar';
 import SneakersInfo from '../../components/sneakersinfo';
 
 // Base de données des sneakers
