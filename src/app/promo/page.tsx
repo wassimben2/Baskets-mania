@@ -3,7 +3,7 @@
 
 import React, { useState, useMemo } from 'react';
 import { ChevronDown, ChevronUp, ChevronLeft, ChevronRight } from 'lucide-react';
-import Navbar from '../components/Navbar';
+import Navbar from '../components/navbar';
 
 const EnfantsPage = () => {
   // Base de données des produits enfants

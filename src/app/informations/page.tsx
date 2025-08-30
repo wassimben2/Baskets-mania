@@ -1,7 +1,6 @@
 // app/informations/page.tsx
 import Navbar from '../components/navbar';
-
-
+import Footer from '../components/Footer'
 export default function InformationsPage() {
   return (
     <>
@@ -9,91 +8,60 @@ export default function InformationsPage() {
       <div className="min-h-screen bg-white">
         <div className="container mx-auto px-6 py-12">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl font-bold text-gray-900 mb-8">INFORMATIONS</h1>
+            <h1 className="text-4xl  mb-8 font-black  bg-gradient-to-r from-gray-900 via-red-600 to-orange-600 bg-clip-text text-transparent drop-shadow-sm relative">Politique de remboursement</h1>
             
             <div className="space-y-12">
-              {/* À propos */}
-              <section>
-                <h2 className="text-2xl font-semibold mb-4">À propos de nous</h2>
-                <p className="text-gray-600 leading-relaxed">
-                  Sneakers Shop est votre destination privilégiée pour les sneakers premium. 
-                  Depuis notre création, nous nous engageons à offrir les modèles les plus exclusifs 
-                  et les plus recherchés du marché. Notre passion pour la culture sneaker nous pousse 
-                  à sélectionner uniquement les meilleures pièces pour nos clients.
-                </p>
-              </section>
+             
 
-              {/* Livraison */}
-              <section>
-                <h2 className="text-2xl font-semibold mb-4">Livraison</h2>
-                <div className="space-y-3 text-gray-600">
-                  <p><strong>Livraison standard :</strong> 3-5 jours ouvrés - Gratuite dès 100€</p>
-                  <p><strong>Livraison express :</strong> 1-2 jours ouvrés - 9.99€</p>
-                  <p><strong>Retrait en magasin :</strong> Disponible sous 2h - Gratuit</p>
-                  <p>Toutes nos commandes sont expédiées avec suivi et assurance.</p>
-                </div>
-              </section>
+              
 
-              {/* Retours */}
+              {/* Politique de remboursement */}
               <section>
-                <h2 className="text-2xl font-semibold mb-4">Retours & Échanges</h2>
-                <div className="space-y-3 text-gray-600">
-                  <p>Vous disposez de 30 jours pour retourner vos articles.</p>
-                  <p>Les articles doivent être dans leur état d'origine, avec tous les emballages.</p>
-                  <p>Les retours sont gratuits pour les commandes de plus de 100€.</p>
-                  <p>Le remboursement est effectué sous 5-7 jours ouvrés après réception.</p>
-                </div>
-              </section>
+                
+                <div className="text-gray-600 leading-relaxed space-y-4">
+                  <p>📍 <strong>Baskets Mania – مرجعكم الأول في عالم السنيكرز 🏀👟</strong></p>
 
-              {/* Authenticité */}
-              <section>
-                <h2 className="text-2xl font-semibold mb-4">Garantie d'authenticité</h2>
-                <p className="text-gray-600 leading-relaxed">
-                  Tous nos produits sont 100% authentiques. Nous travaillons directement avec 
-                  les marques et des revendeurs agréés. Chaque paire est vérifiée par nos experts 
-                  avant expédition. En cas de doute sur l'authenticité d'un produit reçu, 
-                  nous nous engageons à un remboursement intégral.
-                </p>
-              </section>
-
-              {/* Tailles */}
-              <section>
-                <h2 className="text-2xl font-semibold mb-4">Guide des tailles</h2>
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <p className="text-gray-600 mb-4">
-                    Nos tailles correspondent aux standards européens. 
-                    En cas de doute, n'hésitez pas à nous contacter.
+                  <p>
+                    Chez Baskets Mania, nous mettons un point d’honneur à offrir à nos clients une expérience 
+                    d’achat de qualité. Afin d’assurer une transparence totale, voici notre politique concernant les retours et échanges :
                   </p>
-                  <div className="grid grid-cols-3 gap-4 text-sm">
-                    <div className="font-medium">EU</div>
-                    <div className="font-medium">US</div>
-                    <div className="font-medium">UK</div>
-                    <div>40</div><div>7</div><div>6</div>
-                    <div>41</div><div>8</div><div>7</div>
-                    <div>42</div><div>9</div><div>8</div>
-                    <div>43</div><div>10</div><div>9</div>
-                    <div>44</div><div>11</div><div>10</div>
-                    <div>45</div><div>12</div><div>11</div>
-                  </div>
+
+                  <ol className="list-decimal list-inside space-y-2">
+                    <li>
+                      <strong>Vérification avant paiement :</strong>  
+                      Nos clients ont la possibilité de vérifier l’état et la qualité des baskets avant de procéder au paiement.
+                    </li>
+                    <li>
+                      <strong>Échange en cas de mauvaise pointure :</strong>  
+                      Si la pointure ne convient pas, nous proposons un échange contre une taille différente du même modèle, sous réserve de disponibilité.  
+                      Si la taille souhaitée n’est pas disponible, un échange peut être effectué contre un autre modèle de valeur équivalente.
+                    </li>
+                    <li>
+                      <strong>Aucun remboursement :</strong>  
+                      Nous ne procédons à aucun remboursement, quel que soit le motif.
+                    </li>
+                    <li>
+                      <strong>Conditions pour un échange :</strong>  
+                      L’échange doit être demandé dans un délai de <strong>24h</strong> après l’achat.  
+                      La paire doit être neuve, non portée et dans son emballage d’origine.  
+                      Le ticket de caisse ou la preuve d’achat est obligatoire.
+                    </li>
+                  </ol>
+
+                  <p>
+                    Nous vous remercions pour votre confiance et restons à votre disposition pour toute question !
+                  </p>
+
+                  <p>📍 <strong>Baskets Mania – Votre référence en sneakers 🏀👟</strong></p>
                 </div>
               </section>
 
-              {/* Contact */}
-              <section>
-                <h2 className="text-2xl font-semibold mb-4">Besoin d'aide ?</h2>
-                <p className="text-gray-600 mb-4">
-                  Notre équipe customer service est disponible pour répondre à toutes vos questions.
-                </p>
-                <div className="space-y-2 text-gray-600">
-                  <p>📧 Email : support@sneakersshop.com</p>
-                  <p>📞 Téléphone : +33 1 23 45 67 89</p>
-                  <p>💬 Chat en ligne : Disponible 9h-18h</p>
-                </div>
-              </section>
+             
             </div>
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
