@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link"; // ✅ pour la navigation
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { FaArrowRight, FaStar } from "react-icons/fa";
 
@@ -16,14 +16,14 @@ export default function Undernav() {
   }, []);
 
   return (
-    <div className="relative w-full h-[700px] overflow-hidden">
+    <div className="relative w-full h-screen overflow-hidden">
       {banners.map((banner, index) => (
         <Image
           key={index}
           src={banner}
           alt="Banner"
           width={1900}
-          height={600}
+          height={1080}
           className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
             index === currentBanner ? "opacity-100" : "opacity-0"
           }`}
@@ -32,14 +32,15 @@ export default function Undernav() {
 
       <div className="absolute inset-0 bg-black/40 z-5"></div>
 
-      <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-center px-4">
-        {/* Texte au dessus */}
-        <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+      <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-center px-4 pt-24">
+        {/* Badge produit - DESCENDU */}
+        <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-8">
           <FaStar className="text-yellow-400 text-sm" />
           <span className="text-white text-sm font-medium">Produit Non original</span>
           <FaStar className="text-yellow-400 text-sm" />
         </div>
 
+        {/* Titre principal */}
         <h1 className="font-extrabold text-5xl md:text-6xl lg:text-7xl mb-4 text-white drop-shadow-2xl leading-tight">
           Trouvez Vos
           <br />
@@ -55,9 +56,9 @@ export default function Undernav() {
           <br />avec des designs uniques et un confort exceptionnel
         </p>
 
-        {/* Boutons */}
+        {/* Boutons - MÊME POSITION */}
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link href="/collection">
+          <Link href="/sneakerss">
             <button className="group relative px-8 py-4 bg-gradient-to-r from-[#c68642] to-[#f4a460] text-white font-bold text-lg rounded-2xl shadow-2xl hover:shadow-[#c68642]/25 transform hover:scale-105 transition-all duration-300 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-[#f4a460] to-[#c68642] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="relative flex items-center gap-3">
@@ -74,23 +75,12 @@ export default function Undernav() {
           </Link>
         </div>
 
-        {/* Stats */}
-        <div className="flex items-center gap-8 mt-12 text-white">
-          <div className="text-center">
-            <div className="text-2xl font-bold">500+</div>
-            <div className="text-sm text-gray-300">Modèles</div>
-          </div>
-          <div className="w-px h-8 bg-white/30"></div>
-          <div className="text-center">
-            <div className="text-2xl font-bold">50+</div>
-            <div className="text-sm text-gray-300">Marques</div>
-          </div>
-          <div className="w-px h-8 bg-white/30"></div>
-          <div className="text-center">
-            <div className="text-2xl font-bold">4.8★</div>
-            <div className="text-sm text-gray-300">Satisfaction</div>
-          </div>
-        </div>
+        
+       
+
+      
+        
+        
       </div>
     </div>
   );

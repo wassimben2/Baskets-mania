@@ -17,7 +17,6 @@ interface SneakersInfoProps {
   soldOutSizes?: number[];
 }
 
-
 export default function SneakersInfo({
   name,
   images,
@@ -50,6 +49,22 @@ export default function SneakersInfo({
       minimumFractionDigits: 2,
       maximumFractionDigits: 2
     }).format(price);
+  };
+
+  const handleClickWhatsApp = () => {
+    if (!selectedSize) {
+      alert("Veuillez sélectionner une pointure !");
+      return;
+    }
+
+    const phoneNumber = "213775446582";
+    const totalPrice = currentPrice * quantity;
+    const message = `Salam, Rani hab ndir commande :
+Produit : ${name} - Taille : ${selectedSize} - Prix : ${formatPrice(totalPrice)} ${currency} x ${quantity}.
+Est-ce que ta9der tconfirmili ida disponible ? Merci d'avance.`;
+
+    const url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -411,10 +426,14 @@ export default function SneakersInfo({
 </button>
 
 
-                <button className="group w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white py-5 rounded-2xl font-black text-lg hover:from-green-600 hover:to-emerald-600 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 shadow-2xl hover:shadow-3xl">
-                  <Phone className="w-6 h-6 transform transition-transform duration-300 group-hover:rotate-12" />
-                  Commander via WhatsApp
-                </button>
+              <button
+        onClick={handleClickWhatsApp}
+        className="group w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white py-5 rounded-2xl font-black text-lg hover:from-green-600 hover:to-emerald-600 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 shadow-2xl hover:shadow-3xl"
+      >
+        <Phone className="w-6 h-6 transform transition-transform duration-300 group-hover:rotate-12" />
+        Commander via WhatsApp
+      </button>
+      
               </div>
             </div>
           </div>
