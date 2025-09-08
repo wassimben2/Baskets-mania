@@ -10,7 +10,7 @@ const AirJordanCollection = () => {
       id: 1,
       name: "Air Jordan 1 High Lost and Found",
       price: "12,800.00 DZD",
-      image: "/8.webp",
+      image: "/Air Jordan 1 Hight Lost and Found/8.webp",
     },
     {
       id: 2,
