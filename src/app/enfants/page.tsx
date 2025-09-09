@@ -8,11 +8,11 @@ import Navbar from '../components/navbar';
 const EnfantsPage = () => {
   // Base de données des produits enfants
   const products = [
-    { id: 1, name: 'JORDAN 1 LOW KIDS "BRED"', price: 85, image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400', category: 'enfants', stock: 'En stock', sales: 450, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 1' },
-    { id: 2, name: 'JORDAN 4 KIDS "WHITE CEMENT"', price: 110, image: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400', category: 'enfants', stock: 'En stock', sales: 380, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 4' },
-    { id: 3, name: 'JORDAN 11 LOW KIDS "CONCORD"', price: 95, image: 'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=400', category: 'enfants', stock: 'En rupture de stock', sales: 320, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 11' },
-    { id: 4, name: 'JORDAN 3 KIDS "BLACK CEMENT"', price: 100, image: 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=400', category: 'enfants', stock: 'En stock', sales: 290, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 3' },
-    { id: 5, name: 'JORDAN 5 KIDS "FIRE RED"', price: 105, image: 'https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=400', category: 'enfants', stock: 'En stock', sales: 250, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 5' },
+    { id: 1, name: 'AIR JORDAN 1 LOW KIDS "OBSIDIAN"', price: 6500, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_0567d8e7-ca1f-491b-88bf-060e6545a9b2.jpg?v=1741723730', category: 'enfants', stock: 'En stock', sales: 0, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1' },
+    { id: 2, name: 'AIR JORDAN 1 LOW "CHICAGO"', price: 6000, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_b8e2aa9d-4d86-4bb4-899f-46d7868d9f6f.jpg?v=1741724670', category: 'enfants', stock: 'En stock', sales: 0, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1' },
+    { id: 3, name: 'AIR JORDAN 1 LOW KIDS "UNC"', price: 5900, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_6641c03d-d6de-4ab3-a153-0bff48a63aa6.jpg?v=1742469976', category: 'enfants', stock: 'En stock', sales: 0, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1' },
+    { id: 4, name: 'AIR JORDAN 1 LOW KIDS', price: 6000, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_8c615d4b-b087-4426-98a2-4e7563896770.jpg?v=1741725001', category: 'enfants', stock: 'En stock', sales: 0, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1' },
+
     // ... ajouter les autres produits enfants
   ];
 
