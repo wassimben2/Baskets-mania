@@ -83,50 +83,48 @@ Est-ce que ta9der tconfirmili ida disponible ? Merci d'avance.`;
     setSelectedImage(image);
   };
     const handleCommander = async () => {
-    if (!formData.fullName || !formData.phone || !formData.wilaya || !formData.commune) {
-      alert("Veuillez remplir toutes les informations de livraison !");
-      return;
-    }
+  if (!formData.fullName || !formData.phone || !formData.wilaya || !formData.commune) {
+    alert("Veuillez remplir toutes les informations de livraison !");
+    return;
+  }
 
-    if (!selectedSize) {
-      alert("Veuillez sélectionner une pointure !");
-      return;
-    }
+  if (!selectedSize) {
+    alert("Veuillez sélectionner une pointure !");
+    return;
+  }
 
-    try {
-      const res = await fetch("/api/commandes", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          customer_name: formData.fullName,
-          phone_number: formData.phone,
-          wilaya: formData.wilaya,
-          commune: formData.commune,
-          sneaker_name: name,
-          size: selectedSize,
-          quantity: quantity,
-          original_price: originalPrice || currentPrice,
-          current_price: currentPrice,
-          currency: currency,
-          wants_offers: wantsOffers,
-        }),
-      });
+  try {
+    const res = await fetch("/api/commandes", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        fullName: formData.fullName,
+        phone: formData.phone,
+        wilaya: formData.wilaya,
+        commune: formData.commune,
+        sneakerName: name, // correspond à ton modèle de basket
+        size: selectedSize,
+        quantity: quantity,
+        currentPrice: currentPrice
+      }),
+    });
 
-      if (res.ok) {
-        alert("✅ Votre commande a été enregistrée avec succès !");
-        setFormData({ fullName: "", phone: "", wilaya: "", commune: "" });
-        setSelectedSize(null);
-        setQuantity(1);
-      } else {
-        alert("❌ Erreur lors de l'enregistrement de la commande.");
-      }
-    } catch (error) {
-      console.error("Erreur:", error);
-      alert("⚠️ Problème de connexion au serveur.");
+    if (res.ok) {
+      alert("✅ Votre commande a été enregistrée avec succès !");
+      setFormData({ fullName: "", phone: "", wilaya: "", commune: "" });
+      setSelectedSize(null);
+      setQuantity(1);
+    } else {
+      alert("❌ Erreur lors de l'enregistrement de la commande.");
     }
-  };
+  } catch (error) {
+    console.error("Erreur:", error);
+    alert("⚠️ Problème de connexion au serveur.");
+  }
+};
+
 
 
   return (
