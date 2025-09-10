@@ -1,39 +1,51 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { FaArrowRight, FaStar } from "react-icons/fa";
 
 export default function Undernav() {
-  const banners = ["/1.jpg", "/2.jpg", "/3.jpg", "/6.jpg", "/7.jpg"];
-  const [currentBanner, setCurrentBanner] = useState(0);
+  // Tes images de fond
+  const images = [
+    "/1.jpg",
+    "/2.jpg",
+    "/3.jpg",
+    "/6.jpg",
+    "/7.jpg",
 
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Défilement automatique toutes les 5s
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentBanner((prev) => (prev + 1) % banners.length);
+      setCurrentIndex((prev) => (prev + 1) % images.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
-      {banners.map((banner, index) => (
-        <Image
-          key={index}
-          src={banner}
-          alt="Banner"
-          width={1900}
-          height={1080}
-          className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
-            index === currentBanner ? "opacity-100" : "opacity-0"
-          }`}
-        />
-      ))}
+      {/* Images de fond qui défilent */}
+      <div className="absolute inset-0">
+        {images.map((src, index) => (
+          <Image
+            key={index}
+            src={src}
+            alt={`Slide ${index}`}
+            fill
+            priority={index === 0}
+            className={`object-cover transition-opacity duration-1000 ${
+              index === currentIndex ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ))}
+      </div>
 
-      <div className="absolute inset-0 bg-black/40 z-5"></div>
-
+      {/* Contenu par-dessus */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-center px-4 pt-24">
-        {/* Badge produit - DESCENDU */}
+        {/* Badge */}
         <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-8">
           <FaStar className="text-yellow-400 text-sm" />
           <span className="text-white text-sm font-medium">Produit Non original</span>
@@ -51,12 +63,13 @@ export default function Undernav() {
           Parfaites
         </h1>
 
+        {/* Texte */}
         <p className="text-xl md:text-2xl text-gray-200 mb-8 font-light max-w-2xl leading-relaxed">
           Découvrez notre collection exclusive de sneakers tendance 
           <br />avec des designs uniques et un confort exceptionnel
         </p>
 
-        {/* Boutons - MÊME POSITION */}
+        {/* Boutons */}
         <div className="flex flex-col sm:flex-row gap-4">
           <Link href="/sneakerss">
             <button className="group relative px-8 py-4 bg-gradient-to-r from-[#c68642] to-[#f4a460] text-white font-bold text-lg rounded-2xl shadow-2xl hover:shadow-[#c68642]/25 transform hover:scale-105 transition-all duration-300 overflow-hidden">
@@ -74,13 +87,6 @@ export default function Undernav() {
             </button>
           </Link>
         </div>
-
-        
-       
-
-      
-        
-        
       </div>
     </div>
   );

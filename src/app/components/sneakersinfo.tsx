@@ -116,6 +116,7 @@ Est-ce que ta9der tconfirmili ida disponible ? Merci d'avance.`;
       setFormData({ fullName: "", phone: "", wilaya: "", commune: "" });
       setSelectedSize(null);
       setQuantity(1);
+       window.location.href = "/success";
     } else {
       alert("❌ Erreur lors de l'enregistrement de la commande.");
     }

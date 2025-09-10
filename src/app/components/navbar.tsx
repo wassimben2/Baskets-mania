@@ -13,12 +13,12 @@ export default function Navbar() {
   const [isHovered, setIsHovered] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const navItems = [
+  const leftNavItems = [
     { key: "home", path: "/" },
     { key: "sneakers", path: "/sneakerss" },
-    { key: "kids", path: "/enfants" },
-    { key: "promo", path: "/promo" },
-    { key: "accessories", path: "/accesoires" },
+  ];
+
+  const rightNavItems = [
     { key: "contact", path: "/contact" },
     { key: "info", path: "/informations" },
   ];
@@ -65,25 +65,20 @@ export default function Navbar() {
         className={`absolute top-0 left-0 right-0 z-50 transition-colors duration-500 ${
           isHovered 
             ? 'bg-white/95 backdrop-blur-lg shadow-lg' 
-            : 'bg-transparent'
+            : pathname === '/' 
+              ? 'bg-transparent' 
+              : 'bg-white/95 backdrop-blur-lg shadow-lg'
         }`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
+          <div className="relative flex items-center w-full">
 
-            {/* Logo à gauche - TOUJOURS VISIBLE */}
-            <div className="flex items-center">
-              <Link href="/">
-                <Image src="/5.png" alt="Logo" width={60} height={20} className="filter drop-shadow-lg" />
-              </Link>
-            </div>
-
-            {/* Menu de navigation au centre - VERSION DESKTOP */}
-            <div className="hidden md:flex items-center">
+            {/* Menu de navigation gauche - VERSION DESKTOP */}
+            <div className="hidden md:flex items-center absolute left-0">
               <ul className="flex gap-8 list-none m-0 p-0">
-                {navItems.map(({ key, path }) => {
+                {leftNavItems.map(({ key, path }) => {
                   const isActive = pathname === path;
                   return (
                     <li key={key}>
@@ -91,14 +86,14 @@ export default function Navbar() {
                         href={path}
                         className={`relative px-4 py-2.5 text-sm font-semibold tracking-wide transition-all duration-300 ${
                           isActive
-                            ? (isHovered ? 'text-black' : 'text-white')
-                            : (isHovered ? 'text-black hover:text-gray-600' : 'text-white hover:text-gray-200')
+                            ? (isHovered || pathname !== '/' ? 'text-black' : 'text-white')
+                            : (isHovered || pathname !== '/' ? 'text-black hover:text-gray-600' : 'text-white hover:text-gray-200')
                         } hover:scale-105`}
                       >
                         {translations[currentLang][key]}
                         {isActive && (
                           <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-8 h-0.5 rounded-full transition-colors duration-300 ${
-                            isHovered ? 'bg-black' : 'bg-white'
+                            isHovered || pathname !== '/' ? 'bg-black' : 'bg-white'
                           }`}></div>
                         )}
                       </Link>
@@ -108,29 +103,42 @@ export default function Navbar() {
               </ul>
             </div>
 
+            {/* Logo au centre absolu de la navbar */}
+            <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center">
+              <Link href="/">
+                <Image src="/5.png" alt="Logo" width={60} height={20} className="filter " />
+              </Link>
+            </div>
+
             {/* Actions à droite */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 ml-auto">
               
-              {/* Sélecteur de langue - DESKTOP */}
-              <div className="relative hidden md:block">
-                <select
-                  className={`appearance-none backdrop-blur-sm border px-3 py-2 pr-8 text-sm font-medium focus:outline-none transition-all duration-300 cursor-pointer rounded-lg ${
-                    isHovered
-                      ? 'bg-black/10 border-black/30 text-black focus:border-black/50'
-                      : 'bg-white/20 border-white/30 text-white focus:border-white/50'
-                  }`}
-                  value={currentLang}
-                  onChange={(e) => setCurrentLang(e.target.value)}
-                >
-                  {languages.map(lang => (
-                    <option key={lang.code} value={lang.code} className="text-black">
-                      {lang.label}
-                    </option>
-                  ))}
-                </select>
-                <FaGlobe className={`absolute right-2.5 top-1/2 transform -translate-y-1/2 text-sm pointer-events-none transition-colors duration-300 ${
-                  isHovered ? 'text-black/70' : 'text-white/70'
-                }`} />
+              {/* Menu de navigation droite - VERSION DESKTOP */}
+              <div className="hidden md:flex items-center">
+                <ul className="flex gap-6 list-none m-0 p-0">
+                  {rightNavItems.map(({ key, path }) => {
+                    const isActive = pathname === path;
+                    return (
+                      <li key={key}>
+                        <Link
+                          href={path}
+                          className={`relative px-4 py-2.5 text-sm font-semibold tracking-wide transition-all duration-300 ${
+                            isActive
+                              ? (isHovered || pathname !== '/' ? 'text-black' : 'text-white')
+                              : (isHovered || pathname !== '/' ? 'text-black hover:text-gray-600' : 'text-white hover:text-gray-200')
+                          } hover:scale-105`}
+                        >
+                          {translations[currentLang][key]}
+                          {isActive && (
+                            <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-8 h-0.5 rounded-full transition-colors duration-300 ${
+                              isHovered || pathname !== '/' ? 'bg-black' : 'bg-white'
+                            }`}></div>
+                          )}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
 
               {/* Barre de recherche - DESKTOP */}
@@ -144,7 +152,7 @@ export default function Navbar() {
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Rechercher des sneakers..."
                     className={`w-full px-4 py-2.5 backdrop-blur-sm border text-sm focus:outline-none transition-all duration-300 rounded-lg ${
-                      isHovered
+                      isHovered || pathname !== '/'
                         ? 'bg-black/10 border-black/30 text-black placeholder-black/70 focus:border-black/50'
                         : 'bg-white/20 border-white/30 text-white placeholder-white/70 focus:border-white/50'
                     }`}
@@ -164,19 +172,41 @@ export default function Navbar() {
                   }}
                   className={`p-2.5 transition-all duration-300 relative z-10 rounded-lg ${
                     isSearchOpen
-                      ? (isHovered ? 'text-black bg-black/20' : 'text-white bg-white/20')
-                      : (isHovered ? 'text-black hover:text-gray-600 hover:bg-black/20' : 'text-white hover:text-gray-200 hover:bg-white/20')
+                      ? (isHovered || pathname !== '/' ? 'text-black bg-black/20' : 'text-white bg-white/20')
+                      : (isHovered || pathname !== '/' ? 'text-black hover:text-gray-600 hover:bg-black/20' : 'text-white hover:text-gray-200 hover:bg-white/20')
                   }`}
                 >
                   <FaSearch className="text-lg" />
                 </button>
+              </div>
+              
+              {/* Sélecteur de langue - DESKTOP */}
+              <div className="relative hidden md:block">
+                <select
+                  className={`appearance-none backdrop-blur-sm border px-3 py-2 pr-8 text-sm font-medium focus:outline-none transition-all duration-300 cursor-pointer rounded-lg ${
+                    isHovered || pathname !== '/'
+                      ? 'bg-black/10 border-black/30 text-black focus:border-black/50'
+                      : 'bg-white/20 border-white/30 text-white focus:border-white/50'
+                  }`}
+                  value={currentLang}
+                  onChange={(e) => setCurrentLang(e.target.value)}
+                >
+                  {languages.map(lang => (
+                    <option key={lang.code} value={lang.code} className="text-black">
+                      {lang.label}
+                    </option>
+                  ))}
+                </select>
+                <FaGlobe className={`absolute right-2.5 top-1/2 transform -translate-y-1/2 text-sm pointer-events-none transition-colors duration-300 ${
+                  isHovered || pathname !== '/' ? 'text-black/70' : 'text-white/70'
+                }`} />
               </div>
 
               {/* Menu mobile - trois traits */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className={`md:hidden p-2 transition-all duration-300 ${
-                  isHovered ? 'text-black' : 'text-white'
+                  isHovered || pathname !== '/' ? 'text-black' : 'text-white'
                 }`}
               >
                 <div className="w-6 h-0.5 bg-current mb-1.5 transition-all duration-300"></div>
@@ -214,7 +244,27 @@ export default function Navbar() {
           {/* Navigation mobile */}
           <div className="py-6">
             <ul className="space-y-2">
-              {navItems.map(({ key, path }) => {
+              {/* Items de gauche */}
+              {leftNavItems.map(({ key, path }) => {
+                const isActive = pathname === path;
+                return (
+                  <li key={key}>
+                    <Link
+                      href={path}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={`block px-6 py-3 text-lg font-semibold transition-colors ${
+                        isActive
+                          ? 'text-[#c68642] bg-[#c68642]/10 border-r-4 border-[#c68642]'
+                          : 'text-gray-700 hover:text-[#c68642] hover:bg-gray-50'
+                      }`}
+                    >
+                      {translations[currentLang][key]}
+                    </Link>
+                  </li>
+                );
+              })}
+              {/* Items de droite */}
+              {rightNavItems.map(({ key, path }) => {
                 const isActive = pathname === path;
                 return (
                   <li key={key}>

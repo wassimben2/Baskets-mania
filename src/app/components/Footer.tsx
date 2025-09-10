@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-gray-50 py-16 px-4">
+    <footer className="bg-gray-50 py-9 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section d'abonnement */}
         <div className="text-center mb-16">
