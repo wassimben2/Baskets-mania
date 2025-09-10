@@ -8,12 +8,12 @@ import Navbar from '../components/navbar';
 const EnfantsPage = () => {
   // Base de données des produits enfants
   const products = [
-    { id: 1, name: 'JORDAN 1 LOW KIDS "BRED"', price: 85, image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400', category: 'enfants', stock: 'En stock', sales: 450, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 1' },
-    { id: 2, name: 'JORDAN 4 KIDS "WHITE CEMENT"', price: 110, image: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400', category: 'enfants', stock: 'En stock', sales: 380, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 4' },
-    { id: 3, name: 'JORDAN 11 LOW KIDS "CONCORD"', price: 95, image: 'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=400', category: 'enfants', stock: 'En rupture de stock', sales: 320, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 11' },
-    { id: 4, name: 'JORDAN 3 KIDS "BLACK CEMENT"', price: 100, image: 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=400', category: 'enfants', stock: 'En stock', sales: 290, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 3' },
-    { id: 5, name: 'JORDAN 5 KIDS "FIRE RED"', price: 105, image: 'https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=400', category: 'enfants', stock: 'En stock', sales: 250, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 5' },
-    // ... ajouter les autres produits enfants
+    { id: 1, name: 'AIR JORDAN 1 HIGH "HYPER BLUE"', price: 11900, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_dc7887ef-941a-4d07-86ba-e990fcfd545c.jpg?v=1740004806', category: 'hommes', stock: 'En stock', sales: 0, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1' },
+    { id: 2, name: 'AIR JORDAN 1 HIGH "ROYAL BLUE"', price: 12400, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_a975c576-ecb2-4b32-8ff4-5ed7d5d22995.jpg?v=1740003678', category: 'hommes', stock: 'En stock', sales: 0, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1' },
+    { id: 3, name: 'AIR JORDAN 11 OG "BRED"', price: 12990, image: 'https://basketsmania.com/cdn/shop/files/69ea72be90994a2b1ab299c1959e1a4b_1.jpg?v=1739615360', category: 'hommes', stock: 'Épuisé', sales: 0, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 11' },
+    { id: 4, name: 'AIR JORDAN 5 "SHATTERED BACKBOARD"', price: 11800, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_c4922142-81f5-4c5a-a66e-9f7f3421171f.jpg?v=1740003065', category: 'hommes', stock: 'Épuisé', sales: 0, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 5' },
+    { id: 5, name: 'AIR JORDAN 1 HIGH "PALOMINO"', price: 12800, image: 'https://basketsmania.com/cdn/shop/files/IMG_20250212_191732_371.jpg?v=1739385710', category: 'hommes', stock: 'Épuisé', sales: 0, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 1' },
+
   ];
 
   // États pour les filtres et pagination

@@ -8,12 +8,9 @@ import Navbar from '../components/navbar';
 const EnfantsPage = () => {
   // Base de données des produits enfants
   const products = [
-    { id: 1, name: 'JORDAN 1 LOW KIDS "BRED"', price: 85, image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400', category: 'enfants', stock: 'En stock', sales: 450, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 1' },
-    { id: 2, name: 'JORDAN 4 KIDS "WHITE CEMENT"', price: 110, image: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400', category: 'enfants', stock: 'En stock', sales: 380, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 4' },
-    { id: 3, name: 'JORDAN 11 LOW KIDS "CONCORD"', price: 95, image: 'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=400', category: 'enfants', stock: 'En rupture de stock', sales: 320, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 11' },
-    { id: 4, name: 'JORDAN 3 KIDS "BLACK CEMENT"', price: 100, image: 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=400', category: 'enfants', stock: 'En stock', sales: 290, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 3' },
-    { id: 5, name: 'JORDAN 5 KIDS "FIRE RED"', price: 105, image: 'https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=400', category: 'enfants', stock: 'En stock', sales: 250, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 5' },
-    // ... ajouter les autres produits enfants
+    { id: 10, name: 'CHAUSSETTES NIKE BLANCHES', price: 300, image: 'https://basketsmania.com/cdn/shop/files/48ba1a6af6ab136ce45bc20a4b0cffdc.jpg?v=1739305972&width=990', category: 'accessoires', stock: 'En stock', sales: 0, promotion: false, brand: 'Nike', model: 'Chaussettes' },
+    { id: 11, name: 'CHAUSSETTES NIKE NOIRES', price: 300, image: 'https://basketsmania.com/cdn/shop/files/6af0ca7385cba79eccf7ba4edf433067.jpg?v=1739306118&width=990', category: 'accessoires', stock: 'En stock', sales: 0, promotion: false, brand: 'Nike', model: 'Chaussettes' },
+
   ];
 
   // États pour les filtres et pagination
