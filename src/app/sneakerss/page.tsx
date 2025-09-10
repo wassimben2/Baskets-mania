@@ -5,7 +5,7 @@ import { ChevronDown, ChevronUp, ChevronLeft, ChevronRight } from 'lucide-react'
 import Navbar from '../components/navbar';
 
 const products = [
-  { id: 1, name: 'Air Jordan 1 LOW concord', price: 12000, image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400', stock: 'Promotion', sales: 1250, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
+  { id: 1, name: 'Air Jordan 1 LOW concord', price: 12000, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_39247f00-107e-434b-978a-5858b0b67727.jpg?v=1745165207&width=990', stock: 'Promotion', sales: 1250, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
   { id: 2, name: 'Air Jordan 1 High OG "Space Jam"', price: 11800, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_53c4b1c0-5b6a-4b56-b89d-34eaf3fe5e51.jpg?v=1745166463', stock: 'Promotion', sales: 890, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
   { id: 3, name: 'Jordan 1 low green', price: 11800, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_e6b90f8f-5978-4cef-b198-991260ee5800.jpg?v=1740520706', stock: 'Promotion', sales: 756, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
   { id: 4, name: 'Air Jordan 1 low Panda', price: 13200, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_36cb0a97-bf6b-48d8-8ec7-713a95b72589.jpg?v=1740520129', stock: 'Épuisé', sales: 1100, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
