@@ -5,7 +5,7 @@ import { ChevronDown, ChevronUp, ChevronLeft, ChevronRight } from 'lucide-react'
 import Navbar from '../components/navbar';
 
 const products = [
-  { id: 1, name: 'Air Jordan 1 LOW concord', price: 12000, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_39247f00-107e-434b-978a-5858b0b67727.jpg?v=1745165207&width=990', stock: 'Promotion', sales: 1250, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
+  { id: 1, name: 'Air Jordan 1 LOW concord', price: 12000, image: 'https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/083/812/842/original/1112226_01.jpg.jpeg?action=crop&width=850', stock: 'Promotion', sales: 1250, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
   { id: 2, name: 'Air Jordan 1 High OG "Space Jam"', price: 11800, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_53c4b1c0-5b6a-4b56-b89d-34eaf3fe5e51.jpg?v=1745166463', stock: 'Promotion', sales: 890, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
   { id: 3, name: 'Jordan 1 low green', price: 11800, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_e6b90f8f-5978-4cef-b198-991260ee5800.jpg?v=1740520706', stock: 'Promotion', sales: 756, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
   { id: 4, name: 'Air Jordan 1 low Panda', price: 13200, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_36cb0a97-bf6b-48d8-8ec7-713a95b72589.jpg?v=1740520129', stock: 'Épuisé', sales: 1100, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
@@ -45,6 +45,21 @@ const products = [
   { id: 38, name: 'Air jordan 3 retro blue unc', price: 12900, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_4ebd478b-1afd-4715-b61b-b8a03df5b360.jpg?v=1739796818', stock: 'Épuisé', sales: 250, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 3', category: 'adulte' },
   { id: 39, name: 'Air Jordan 11 GRATITUDE', price: 12900, image: 'https://basketsmania.com/cdn/shop/files/d90ef5713431568e79eef440932227e0_1.jpg?v=1739616113', stock: 'Épuisé', sales: 200, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 11', category: 'adulte' },
   { id: 40, name: 'Air Jordan 1 High Palomino', price: 12800, image: 'https://basketsmania.com/cdn/shop/files/IMG_20250212_191732_371.jpg?v=1739385710', stock: 'Épuisé', sales: 180, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
+
+    //ENFANTS
+    { id: 41, name: 'AIR JORDAN 1 LOW KIDS "OBSIDIAN"', price: 6500, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_0567d8e7-ca1f-491b-88bf-060e6545a9b2.jpg?v=1741723730', category: 'enfant', stock: 'En stock', sales: 0, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1' },
+    { id: 42, name: 'AIR JORDAN 1 LOW "CHICAGO"', price: 6000, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_b8e2aa9d-4d86-4bb4-899f-46d7868d9f6f.jpg?v=1741724670', category: 'enfant', stock: 'En stock', sales: 0, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1' },
+    { id: 43, name: 'AIR JORDAN 1 LOW KIDS "UNC"', price: 5900, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_6641c03d-d6de-4ab3-a153-0bff48a63aa6.jpg?v=1742469976', category: 'enfant', stock: 'En stock', sales: 0, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1' },
+    { id: 44, name: 'AIR JORDAN 1 LOW KIDS', price: 6000, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_8c615d4b-b087-4426-98a2-4e7563896770.jpg?v=1741725001', category: 'enfant', stock: 'En stock', sales: 0, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1' },
+
+
+    //ACCESSOIRES
+    { id: 10, name: 'CHAUSSETTES NIKE BLANCHES', price: 300, image: 'https://basketsmania.com/cdn/shop/files/48ba1a6af6ab136ce45bc20a4b0cffdc.jpg?v=1739305972&width=990', category: 'accessoire', stock: 'En stock', sales: 0, promotion: false, brand: 'Nike', model: 'Chaussettes' },
+{ id: 11, name: 'CHAUSSETTES NIKE NOIRES', price: 300, image: 'https://basketsmania.com/cdn/shop/files/6af0ca7385cba79eccf7ba4edf433067.jpg?v=1739306118&width=990', category: 'accessoire', stock: 'En stock', sales: 0, promotion: false, brand: 'Nike', model: 'Chaussettes' },
+
+
+
+
 ];
 
 export default function SneakersPage() {
