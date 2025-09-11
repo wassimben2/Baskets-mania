@@ -143,42 +143,64 @@ export default function Navbar() {
 
               {/* Barre de recherche - DESKTOP */}
               <div className="relative hidden md:block">
-                <div className={`absolute right-12 top-1/2 transform -translate-y-1/2 transition-all duration-300 ${
-                  isSearchOpen ? 'opacity-100 w-64 translate-x-0' : 'opacity-0 w-0 translate-x-4 pointer-events-none'
-                }`}>
-                  <input
-                    type="text"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Rechercher des sneakers..."
-                    className={`w-full px-4 py-2.5 backdrop-blur-sm border text-sm focus:outline-none transition-all duration-300 rounded-lg ${
-                      isHovered || pathname !== '/'
-                        ? 'bg-black/10 border-black/30 text-black placeholder-black/70 focus:border-black/50'
-                        : 'bg-white/20 border-white/30 text-white placeholder-white/70 focus:border-white/50'
-                    }`}
-                    autoFocus={isSearchOpen}
-                    onKeyPress={(e) => {
-                      if (e.key === 'Enter') {
-                        console.log('Searching for:', searchQuery);
-                      }
-                    }}
-                  />
-                </div>
+  <button
+    onClick={() => {
+      setIsSearchOpen(!isSearchOpen);
+      if (isSearchOpen) setSearchQuery('');
+    }}
+    className={`p-2.5 transition-all duration-300 relative z-50 rounded-lg ${
+      isSearchOpen
+        ? (isHovered || pathname !== '/' ? 'text-black bg-black/20' : 'text-white bg-white/20')
+        : (isHovered || pathname !== '/' ? 'text-black hover:text-gray-600 hover:bg-black/20' : 'text-white hover:text-gray-200 hover:bg-white/20')
+    }`}
+  >
+    <FaSearch className="text-lg" />
+  </button>
+</div>
 
-                <button
-                  onClick={() => {
-                    setIsSearchOpen(!isSearchOpen);
-                    if (isSearchOpen) setSearchQuery('');
-                  }}
-                  className={`p-2.5 transition-all duration-300 relative z-10 rounded-lg ${
-                    isSearchOpen
-                      ? (isHovered || pathname !== '/' ? 'text-black bg-black/20' : 'text-white bg-white/20')
-                      : (isHovered || pathname !== '/' ? 'text-black hover:text-gray-600 hover:bg-black/20' : 'text-white hover:text-gray-200 hover:bg-white/20')
-                  }`}
-                >
-                  <FaSearch className="text-lg" />
-                </button>
-              </div>
+<div
+  className={`absolute top-full left-0 w-full overflow-hidden transition-[max-height,opacity] duration-500 ease-in-out ${
+    isSearchOpen ? 'max-h-28 opacity-100' : 'max-h-0 opacity-0'
+  }`}
+>
+  <div className="w-full bg-white/95 backdrop-blur-xl border-t border-gray-200 shadow-2xl">
+    <div className="max-w-3xl mx-auto px-6 py-4 flex items-center gap-3">
+      
+      {/* Icône recherche à gauche */}
+      <FaSearch className="text-gray-600 text-xl" />
+
+      {/* Input bien visible */}
+      <input
+        type="text"
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        placeholder="🔎 Rechercher vos sneakers..."
+        className="flex-1 bg-white border border-gray-300 rounded-2xl px-5 py-3 text-gray-900 placeholder-gray-500 text-lg shadow-md focus:outline-none focus:ring-2 focus:ring-black focus:border-black transition-all duration-300"
+        autoFocus={isSearchOpen}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            console.log('Searching for:', searchQuery);
+          }
+          if (e.key === 'Escape') {
+            setIsSearchOpen(false);
+            setSearchQuery('');
+          }
+        }}
+      />
+
+      {/* Bouton fermer */}
+      <button
+        onClick={() => {
+          setIsSearchOpen(false);
+          setSearchQuery('');
+        }}
+        className="p-2 rounded-full hover:bg-gray-100 transition"
+      >
+        <FaTimes className="text-gray-600 text-lg" />
+      </button>
+    </div>
+  </div>
+</div>
               
               {/* Sélecteur de langue - DESKTOP */}
               <div className="relative hidden md:block">

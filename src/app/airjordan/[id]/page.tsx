@@ -9,7 +9,7 @@ import { s } from 'framer-motion/client';
 const sneakersData = {
   1: {
     name: "Air Jordan 1 High OG Space Jam",
-    images: ["/Air Jordan 1 High Lost and Found/8.webp", "/Air Jordan 1 High Lost and Found/20.jpg", "/Air Jordan 1 High Lost and Found/21.jpg"], 
+    images: ["/40.webp", "/41.webp", "/42.jpg"], 
     originalPrice: 13800,
     currentPrice: 11800,
     currency: "DZD",
