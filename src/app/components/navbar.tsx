@@ -15,7 +15,7 @@ export default function Navbar() {
 
   const leftNavItems = [
     { key: "home", path: "/" },
-    { key: "sneakers", path: "/sneakerss" },
+    { key: "sneakers", path: "/sneakerss" }, // Changé de /sneakerss à /sneakerss
   ];
 
   const rightNavItems = [

@@ -6,15 +6,7 @@ import { ChevronDown, ChevronUp, ChevronLeft, ChevronRight } from 'lucide-react'
 import Navbar from '../components/navbar';
 
 const EnfantsPage = () => {
-  // Base de données des produits enfants
-  const products = [
-    { id: 1, name: 'AIR JORDAN 1 LOW KIDS "OBSIDIAN"', price: 6500, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_0567d8e7-ca1f-491b-88bf-060e6545a9b2.jpg?v=1741723730', category: 'enfants', stock: 'En stock', sales: 0, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1' },
-    { id: 2, name: 'AIR JORDAN 1 LOW "CHICAGO"', price: 6000, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_b8e2aa9d-4d86-4bb4-899f-46d7868d9f6f.jpg?v=1741724670', category: 'enfants', stock: 'En stock', sales: 0, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1' },
-    { id: 3, name: 'AIR JORDAN 1 LOW KIDS "UNC"', price: 5900, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_6641c03d-d6de-4ab3-a153-0bff48a63aa6.jpg?v=1742469976', category: 'enfants', stock: 'En stock', sales: 0, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1' },
-    { id: 4, name: 'AIR JORDAN 1 LOW KIDS', price: 6000, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_8c615d4b-b087-4426-98a2-4e7563896770.jpg?v=1741725001', category: 'enfants', stock: 'En stock', sales: 0, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1' },
 
-    // ... ajouter les autres produits enfants
-  ];
 
   // États pour les filtres et pagination
   const [selectedModels, setSelectedModels] = useState([]);
@@ -194,7 +186,7 @@ const EnfantsPage = () => {
             <div className="flex items-center justify-between mb-8">
               <div className="flex items-center gap-4">
                 <h1 className="text-lg font-medium text-gray-900">
-                  ENFANTS <span className="text-gray-500">{filteredAndSortedProducts.length}</span>
+                  PROMO <span className="text-gray-500">{filteredAndSortedProducts.length}</span>
                 </h1>
               </div>
 
@@ -275,7 +267,7 @@ const EnfantsPage = () => {
 
             {filteredAndSortedProducts.length === 0 && (
               <div className="text-center py-12">
-                <div className="text-gray-500 mb-4">No products found with current filters</div>
+                <div className="text-gray-500 mb-4">No products founeeeeeeeeeed with current filters</div>
                 <button
                   onClick={() => {
                     setSelectedModels([]);
@@ -284,7 +276,7 @@ const EnfantsPage = () => {
                   }}
                   className="px-6 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors text-sm font-medium"
                 >
-                  Clear all filters
+                  Clear all fi
                 </button>
               </div>
             )}
