@@ -1,115 +1,118 @@
 "use client";
-
-import { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { useState } from "react";
+import { ChevronDown, Shield, RotateCcw, FileText, Truck, Info } from "lucide-react";
 
 const Footer: React.FC = () => {
-  const [selectedLanguage, setSelectedLanguage] = useState('Français');
-  const [email, setEmail] = useState('');
-
-  const handleEmailSubmit = () => {
-    if (email) {
-      console.log('Email soumis:', email);
-      setEmail('');
-      // Logique d'abonnement ici
-    }
-  };
-
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') {
-      handleEmailSubmit();
-    }
-  };
+  const [selectedLanguage, setSelectedLanguage] = useState("Français");
 
   return (
-    <footer className="bg-gray-50 py-9 px-6">
-      <div className="max-w-6xl mx-auto">
-        {/* Section d'abonnement */}
-        <div className="text-center mb-16">
-          <h2 className="text-2xl font-medium text-gray-900 mb-8">
-            Abonnez-vous à notre mail !
-          </h2>
-          <div className="max-w-md mx-auto">
-            <div className="flex">
-              <input
-                type="email"
-                placeholder="E-mail"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                onKeyPress={handleKeyPress}
-                className="flex-1 px-4 py-3 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
-              />
-              <button
-                onClick={handleEmailSubmit}
-                className="px-6 py-3 bg-gray-900 text-white rounded-r-md hover:bg-gray-800 transition-colors duration-200 flex items-center justify-center"
-              >
-                <svg 
-                  className="w-5 h-5" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
+    <footer 
+      className="relative text-white bg-cover bg-center bg-no-repeat min-h-[500px] flex items-center"
+      style={{
+        backgroundImage: "url('/100.jpg')",
+      }}
+    >
+      {/* Overlay sombre stylé */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50"></div>
+      
+      {/* Contenu du footer */}
+      <div className="relative w-full max-w-6xl mx-auto py-16 px-6 z-10">
+        
+        {/* Section principale */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+          
+          {/* Colonne gauche - Branding */}
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-3xl font-black text-white mb-4">
+                <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">Baskets Mania</span>
+              </h3>
+              <p className="text-gray-300 text-lg leading-relaxed max-w-md">
+                Votre destination exclusive pour les sneakers les plus recherchées. Authenticité garantie, style inégalé.
+              </p>
+            </div>
+            
+            {/* Section langue stylée */}
+            <div>
+              <label className="block text-sm text-gray-400 mb-3 font-medium">
+                Choisir la langue
+              </label>
+              <div className="relative inline-block">
+                <select
+                  id="language-select"
+                  value={selectedLanguage}
+                  onChange={(e) => setSelectedLanguage(e.target.value)}
+                  className="appearance-none bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-5 py-3 pr-12 text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 cursor-pointer hover:bg-white/20 transition-all duration-300 shadow-lg font-medium"
                 >
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth={2} 
-                    d="M14 5l7 7m0 0l-7 7m7-7H3" 
-                  />
-                </svg>
-              </button>
+                  <option value="Français" className="bg-gray-900 text-white">Français</option>
+                  <option value="English" className="bg-gray-900 text-white">English</option>
+                  <option value="Español" className="bg-gray-900 text-white">Español</option>
+                  <option value="Deutsch" className="bg-gray-900 text-white">Deutsch</option>
+                </select>
+                <ChevronDown className="absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-300 pointer-events-none" />
+              </div>
+            </div>
+          </div>
+          
+          {/* Colonne droite - Liens */}
+          <div className="space-y-8">
+            <h4 className="text-xl font-bold text-white mb-6">Informations légales</h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <a
+                href="/politique"
+                className="group flex items-center space-x-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 hover:border-orange-500/50 transition-all duration-300"
+              >
+                <Shield className="text-orange-400 group-hover:text-orange-300 w-5 h-5" />
+                <span className="text-gray-300 group-hover:text-white font-medium">Confidentialité</span>
+              </a>
+              
+              <a
+                href="/remboursement"
+                className="group flex items-center space-x-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 hover:border-orange-500/50 transition-all duration-300"
+              >
+                <RotateCcw className="text-orange-400 group-hover:text-orange-300 w-5 h-5" />
+                <span className="text-gray-300 group-hover:text-white font-medium">Remboursement</span>
+              </a>
+              
+              <a
+                href="/conditions"
+                className="group flex items-center space-x-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 hover:border-orange-500/50 transition-all duration-300"
+              >
+                <FileText className="text-orange-400 group-hover:text-orange-300 w-5 h-5" />
+                <span className="text-gray-300 group-hover:text-white font-medium">Conditions</span>
+              </a>
+              
+              <a
+                href="/expeditions"
+                className="group flex items-center space-x-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 hover:border-orange-500/50 transition-all duration-300"
+              >
+                <Truck className="text-orange-400 group-hover:text-orange-300 w-5 h-5" />
+                <span className="text-gray-300 group-hover:text-white font-medium">Expédition</span>
+              </a>
             </div>
           </div>
         </div>
 
-        {/* Section langue */}
-        <div className="mb-12">
-          <label htmlFor="language-select" className="block text-sm text-gray-600 mb-2">
-            Langue
-          </label>
-          <div className="relative inline-block">
-            <select
-              id="language-select"
-              value={selectedLanguage}
-              onChange={(e) => setSelectedLanguage(e.target.value)}
-              className="appearance-none bg-white border border-gray-300 rounded-md px-4 py-2 pr-8 text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent cursor-pointer"
-            >
-              <option value="Français">Français</option>
-              <option value="English">English</option>
-              <option value="Español">Español</option>
-              <option value="Deutsch">Deutsch</option>
-            </select>
-            <ChevronDown className="absolute right-2 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none" />
-          </div>
+        {/* Séparateur stylé */}
+        <div className="relative mb-8">
+          <div className="h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-orange-500 to-red-500 w-12 h-px"></div>
         </div>
 
-        {/* Section copyright et liens */}
-        <div className="text-sm text-gray-600 space-y-2">
-          <div className="flex flex-wrap items-center gap-2">
-            <span>© 2025, Baskets Mania Commerce électronique propulsé par</span>
-            <a 
-              href="#" 
-              className="text-gray-900 hover:underline font-medium"
-            >
-              Shopify
-            </a>
+        {/* Bottom section */}
+        <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="text-gray-400">
+            <span className="font-medium">© 2025, Baskets Mania.</span>
+            <span className="ml-1">Tous droits réservés.</span>
           </div>
           
-          <div className="flex flex-wrap gap-4 text-gray-600">
-            <a href="#" className="hover:text-gray-900 transition-colors">
-              Politique de confidentialité
-            </a>
-            <span className="text-gray-400">•</span>
-            <a href="#" className="hover:text-gray-900 transition-colors">
-              Politique de remboursement
-            </a>
-            <span className="text-gray-400">•</span>
-            <a href="#" className="hover:text-gray-900 transition-colors">
-              Conditions d'utilisation
-            </a>
-            <span className="text-gray-400">•</span>
-            <a href="#" className="hover:text-gray-900 transition-colors">
-              Politique d'expédition
-            </a>
+          <div className="flex items-center space-x-2">
+            <div className="bg-gradient-to-r from-orange-500/20 to-red-500/20 backdrop-blur-sm rounded-full px-6 py-2 border border-orange-500/30">
+              <span className="text-sm font-medium text-orange-300 flex items-center space-x-2">
+                <Info className="w-4 h-4" />
+                <span>Made with passion for sneaker lovers</span>
+              </span>
+            </div>
           </div>
         </div>
       </div>

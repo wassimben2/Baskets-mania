@@ -4,21 +4,22 @@ import React, { useState, useMemo } from 'react';
 import { ChevronDown, ChevronUp, ChevronLeft, ChevronRight } from 'lucide-react';
 import Navbar from '../components/navbar';
 
+
 const products = [
-  { id: 1, name: 'Air Jordan 1 LOW concord', price: 12000, image: 'https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/083/812/842/original/1112226_01.jpg.jpeg?action=crop&width=850', stock: 'Promotion', sales: 1250, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
+  { id: 1, name: 'Air Jordan 1 LOW concord', price: 12000, image: 'https://cdn-images.farfetch-contents.com/19/61/61/83/19616183_43746252_1000.jpg', stock: 'Promotion', sales: 1250, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
   { id: 2, name: 'Air Jordan 1 High OG "Space Jam"', price: 11800, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_53c4b1c0-5b6a-4b56-b89d-34eaf3fe5e51.jpg?v=1745166463', stock: 'Promotion', sales: 890, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
   { id: 3, name: 'Jordan 1 low green', price: 11800, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_e6b90f8f-5978-4cef-b198-991260ee5800.jpg?v=1740520706', stock: 'Promotion', sales: 756, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
-  { id: 4, name: 'Air Jordan 1 low Panda', price: 13200, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_36cb0a97-bf6b-48d8-8ec7-713a95b72589.jpg?v=1740520129', stock: 'Épuisé', sales: 1100, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
-  { id: 5, name: 'Air Jordan 1 high Stage haze', price: 12500, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_d6fe9af8-498b-4e09-baa3-de012363ae12.jpg?v=1740003435', stock: 'En stock', sales: 980, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
-  { id: 6, name: 'Air Jordan 1 High OG « Black Toe » 2025', price: 12800, image: 'https://basketsmania.com/cdn/shop/files/DF424B57-9BCA-4E2A-A4EB-ED26EE8762ED.jpg?v=1755871768', stock: 'En stock', sales: 1340, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
-  { id: 7, name: 'Air Jordan 1 Mid White', price: 12800, image: 'https://basketsmania.com/cdn/shop/files/DA91B474-C261-4C64-855D-896AD916B529.jpg?v=1753875889', stock: 'Promotion', sales: 1180, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
-  { id: 8, name: 'Jordan 1 low wolf grey', price: 12500, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_4b29dc21-5df4-4432-82cb-0f02ba2381d1.jpg?v=1740520934', stock: 'Promotion', sales: 920, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
+  { id: 4, name: 'Air Jordan 1 low Panda', price: 13200, image: 'https://asset.snipes.com/images/f_auto,q_100,d_fallback-sni.png/b_rgb:f8f8f8,c_pad,w_735,h_735/dpr_1.0/02199271_2/jordan-wmns-air-jordan-1-low-noir-25678-2', stock: 'Épuisé', sales: 1100, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
+  { id: 5, name: 'Air Jordan 1 high Stage haze', price: 12500, image: 'https://cdn.lesitedelasneaker.com/wp-content/images/2021/12/air-jordan-1-grey-fog-stage-haze-555088-108-pic04.jpeg.webp', stock: 'En stock', sales: 980, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
+  { id: 6, name: 'Air Jordan 1 High OG « Black Toe » 2025', price: 12800, image: 'Air Jordan 1 High OG « Black Toe » 2025/Air Jordan 1 High OG « Black Toe » 2025.jpg', stock: 'En stock', sales: 1340, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
+  { id: 7, name: 'Air Jordan 1 Mid White', price: 12800, image: 'https://images.prodirectsport.com/ProductImages/Gallery_2/276696_Gallery_2_1290130.jpg', stock: 'Promotion', sales: 1180, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
+  { id: 8, name: 'Jordan 1 low wolf grey', price: 12500, image: 'https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/105/555/910/original/1484057_01.jpg.jpeg?action=crop&width=1500', stock: 'Promotion', sales: 920, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
   { id: 9, name: 'Air Jordan 11 COOL GREY', price: 12990, image: 'https://basketsmania.com/cdn/shop/files/d563a59c8dc319e13143537a0494231f_1.jpg?v=1739615787', stock: 'Promotion', sales: 850, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 11', category: 'adulte' },
   { id: 10, name: 'Jordan 1 low White', price: 12800, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_e81ba897-0d04-46b7-a83a-1b190f84e825.jpg?v=1740004481', stock: 'Promotion', sales: 670, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
   { id: 11, name: 'Jordan 1 High Hyper Blue', price: 11900, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_dc7887ef-941a-4d07-86ba-e990fcfd545c.jpg?v=1740004806', stock: 'Promotion', sales: 790, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
   { id: 12, name: 'Air Jordan 3 retro BLACK CAT', price: 11500, image: 'https://basketsmania.com/cdn/shop/files/3f2003e9997961b60b348b5dcee8a2cf.jpg?v=1739618375', stock: 'Épuisé', sales: 1020, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 3', category: 'adulte' },
-  { id: 13, name: 'Air Jordan 1 Low « Ashen Slate »', price: 12500, image: 'https://basketsmania.com/cdn/shop/files/521EED6E-3718-478C-B6EE-60B546F79A82.jpg?v=1750029584', stock: 'Promotion', sales: 1500, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
-  { id: 14, name: 'Jordan 1 High Royal Blue', price: 12400, image: 'https://basketsmania.com/cdn/shop/files/rn-image_picker_lib_temp_a975c576-ecb2-4b32-8ff4-5ed7d5d22995.jpg?v=1740003678', stock: 'Promotion', sales: 1450, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
+  { id: 13, name: 'Air Jordan 1 Low « Ashen Slate »', price: 12500, image: 'Air Jordan 1 Low « Ashen Slate »/1.avif', stock: 'Promotion', sales: 1500, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
+  { id: 14, name: 'Jordan 1 High Royal Blue', price: 12400, image: 'https://i.ebayimg.com/images/g/9bQAAOSwiTtl9MAY/s-l1600.webp', stock: 'Promotion', sales: 1450, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
   { id: 15, name: 'Air Jordan 11 LEGEND BLUE', price: 12800, image: 'https://basketsmania.com/cdn/shop/files/IMG_20250213_105556_434.jpg?v=1739616345', stock: 'Épuisé', sales: 780, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 11', category: 'adulte' },
   { id: 16, name: 'Air Jordan 11 72-10', price: 12990, image: 'https://basketsmania.com/cdn/shop/files/IMG_20250213_112221_043.jpg?v=1739618149', stock: 'En stock', sales: 890, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 11', category: 'adulte' },
   { id: 17, name: 'Air Jordan 1 High Lost and Found', price: 12800, image: 'https://basketsmania.com/cdn/shop/files/IMG_20250212_191731_628.jpg?v=1739384935', stock: 'En stock', sales: 650, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
@@ -55,7 +56,7 @@ const products = [
 
     //ACCESSOIRES
     { id: 10, name: 'CHAUSSETTES NIKE BLANCHES', price: 300, image: 'https://basketsmania.com/cdn/shop/files/48ba1a6af6ab136ce45bc20a4b0cffdc.jpg?v=1739305972&width=990', category: 'accessoire', stock: 'En stock', sales: 0, promotion: false, brand: 'Nike', model: 'Chaussettes' },
-{ id: 11, name: 'CHAUSSETTES NIKE NOIRES', price: 300, image: 'https://basketsmania.com/cdn/shop/files/6af0ca7385cba79eccf7ba4edf433067.jpg?v=1739306118&width=990', category: 'accessoire', stock: 'En stock', sales: 0, promotion: false, brand: 'Nike', model: 'Chaussettes' },
+    { id: 11, name: 'CHAUSSETTES NIKE NOIRES', price: 300, image: 'https://basketsmania.com/cdn/shop/files/6af0ca7385cba79eccf7ba4edf433067.jpg?v=1739306118&width=990', category: 'accessoire', stock: 'En stock', sales: 0, promotion: false, brand: 'Nike', model: 'Chaussettes' },
 
 
 
@@ -80,7 +81,6 @@ export default function SneakersPage() {
     { id: 'accessoires', label: 'ACCESSOIRES' }
   ];
 
-  // Filtrer les produits selon l'onglet actif
   const getProductsByTab = (tab) => {
     switch(tab) {
       case 'enfants':
@@ -100,14 +100,10 @@ export default function SneakersPage() {
 
   const filtered = useMemo(() => {
     let result = currentTabProducts.filter(p => {
-      // Filtre par disponibilité
       const availabilityMatch = availability.length === 0 || availability.includes(p.stock);
-      
-      // Filtre par prix
       const minPrice = priceRange.min === '' ? 0 : parseFloat(priceRange.min);
       const maxPriceFilter = priceRange.max === '' ? Infinity : parseFloat(priceRange.max);
       const priceMatch = p.price >= minPrice && p.price <= maxPriceFilter;
-      
       return availabilityMatch && priceMatch;
     });
 
@@ -152,23 +148,23 @@ export default function SneakersPage() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-white pt-20">
-        <div className="flex">
+      <div className="min-h-screen bg-gray-50 pt-20">
+        <div className="flex flex-col lg:flex-row">
           {/* Sidebar de filtres */}
-          <div className="w-80 border-r border-gray-200 p-6 sticky top-20 h-[calc(100vh-5rem)] overflow-y-auto">
-            <h2 className="text-lg font-bold text-gray-900 mb-8">FILTER</h2>
+          <aside className="w-full lg:w-80 p-6 bg-white shadow-lg rounded-xl mb-6 lg:mb-0 sticky top-24">
+            <h2 className="text-xl font-bold text-gray-800 mb-6">Filtres</h2>
 
-            {/* Navigation par onglets */}
+            {/* Tabs */}
             <div className="mb-8">
-              <h3 className="font-medium text-gray-900 mb-4">CATÉGORIES</h3>
+              <h3 className="font-semibold text-gray-700 mb-3">Catégories</h3>
               <div className="space-y-2">
                 {tabs.map(tab => (
                   <button
                     key={tab.id}
                     onClick={() => handleTabChange(tab.id)}
-                    className={`block w-full text-left px-3 py-2 text-sm rounded-md transition-colors ${
+                    className={`block w-full text-left px-4 py-2 rounded-lg transition ${
                       activeTab === tab.id 
-                        ? 'bg-gray-900 text-white' 
+                        ? 'bg-blue-600 text-white shadow-md' 
                         : 'text-gray-700 hover:bg-gray-100'
                     }`}
                   >
@@ -178,167 +174,131 @@ export default function SneakersPage() {
               </div>
             </div>
 
-            {/* Filtre par disponibilité */}
-            <div className="mb-8">
-              <button onClick={() => setAvailabilityOpen(!availabilityOpen)} className="flex items-center justify-between w-full py-3 text-left font-medium text-gray-900">
-                DISPONIBILITÉ
-                {availabilityOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+            {/* Disponibilité */}
+            <div className="mb-6">
+              <button onClick={() => setAvailabilityOpen(!availabilityOpen)} className="flex items-center justify-between w-full py-3 font-medium text-gray-800 hover:text-gray-600">
+                Disponibilité
+                {availabilityOpen ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
               </button>
               {availabilityOpen && (
-                <div className="space-y-3 mt-4">
+                <div className="mt-3 space-y-2">
                   <label className="flex items-center text-sm">
                     <input 
                       type="checkbox" 
                       checked={availability.includes('En stock')} 
                       onChange={() => toggle(availability, setAvailability, 'En stock')} 
-                      className="mr-3 h-4 w-4" 
+                      className="mr-2 h-4 w-4 accent-blue-600"
                     />
-                    <span className="text-gray-700">En stock</span>
+                    En stock
                   </label>
                   <label className="flex items-center text-sm">
                     <input 
                       type="checkbox" 
                       checked={availability.includes('En rupture de stock')} 
                       onChange={() => toggle(availability, setAvailability, 'En rupture de stock')} 
-                      className="mr-3 h-4 w-4" 
+                      className="mr-2 h-4 w-4 accent-red-600"
                     />
-                    <span className="text-gray-700">En rupture de stock</span>
+                    En rupture de stock
                   </label>
                 </div>
               )}
             </div>
 
-            {/* Filtre par prix */}
-            <div className="mb-8">
-              <button onClick={() => setPriceOpen(!priceOpen)} className="flex items-center justify-between w-full py-3 text-left font-medium text-gray-900">
-                PRIX
-                {priceOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+            {/* Prix */}
+            <div className="mb-6">
+              <button onClick={() => setPriceOpen(!priceOpen)} className="flex items-center justify-between w-full py-3 font-medium text-gray-800 hover:text-gray-600">
+                Prix
+                {priceOpen ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
               </button>
               {priceOpen && (
-                <div className="mt-4">
-                  <div className="text-sm text-gray-600 mb-3">
-                    Le prix le plus élevé est de DA {maxPrice.toLocaleString()}.00
-                    <button 
-                      onClick={resetPriceRange}
-                      className="ml-2 text-blue-600 hover:text-blue-800 underline"
-                    >
-                      (Réinitialiser)
-                    </button>
+                <div className="mt-3 space-y-3 text-sm text-gray-600">
+                  <div>
+                    Le prix max est DA {maxPrice.toLocaleString()}
+                    <button onClick={resetPriceRange} className="ml-2 text-blue-600 hover:text-blue-800 underline text-xs">(Réinitialiser)</button>
                   </div>
-                  <div className="space-y-3">
-                    <div>
-                      <label className="block text-xs text-gray-600 mb-1">DE :</label>
-                      <div className="flex items-center">
-                        <span className="text-sm text-gray-600 mr-2">د.ج</span>
-                        <input
-                          type="number"
-                          value={priceRange.min}
-                          onChange={(e) => setPriceRange(prev => ({ ...prev, min: e.target.value }))}
-                          placeholder="0"
-                          className="flex-1 px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-gray-400"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <label className="block text-xs text-gray-600 mb-1">À :</label>
-                      <div className="flex items-center">
-                        <span className="text-sm text-gray-600 mr-2">د.ج</span>
-                        <input
-                          type="number"
-                          value={priceRange.max}
-                          onChange={(e) => setPriceRange(prev => ({ ...prev, max: e.target.value }))}
-                          placeholder={maxPrice.toString()}
-                          className="flex-1 px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-gray-400"
-                        />
-                      </div>
-                    </div>
+                  <div className="flex flex-col gap-2 ">
+                    <input
+                      type="number"
+                      value={priceRange.min}
+                      onChange={(e) => setPriceRange(prev => ({ ...prev, min: e.target.value }))}
+                      placeholder="Min"
+                      className="flex-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-400"
+                    />
+                    <input
+                      type="number"
+                      value={priceRange.max}
+                      onChange={(e) => setPriceRange(prev => ({ ...prev, max: e.target.value }))}
+                      placeholder="Max"
+                      className="flex-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-400"
+                    />
                   </div>
                 </div>
               )}
             </div>
 
-            <button onClick={clear} className="text-sm text-gray-500 hover:text-gray-700 underline">Clear all filters</button>
-          </div>
+            <button onClick={clear} className="text-sm text-gray-500 hover:text-gray-700 underline">Effacer tous les filtres</button>
+          </aside>
 
-          {/* Zone principale avec les produits */}
-          <div className="flex-1 p-6">
-            {/* En-tête avec tri */}
-            <div className="flex items-center justify-between mb-8">
-              <h1 className="text-lg font-medium text-gray-900">
+          {/* Produits */}
+          <main className="flex-1 p-6">
+            <div className="flex items-center justify-between mb-6 flex-wrap gap-4">
+              <h1 className="text-2xl font-bold text-gray-800">
                 {tabs.find(t => t.id === activeTab)?.label} 
                 <span className="text-gray-500 ml-2">{filtered.length}</span>
               </h1>
+
               <div className="flex items-center gap-2">
-                <span className="text-sm text-gray-900">Sort By:</span>
-                <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className="border-none bg-transparent text-sm font-medium text-gray-900 focus:outline-none cursor-pointer">
-                  <option value="relevance">Relevance</option>
-                  <option value="price-high-low">Price: High to Low</option>
-                  <option value="price-low-high">Price: Low to High</option>
-                  <option value="newest">Newest</option>
+                <span className="text-sm font-medium text-gray-700">Trier par:</span>
+                <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className="border rounded-lg px-3 py-1 text-sm focus:outline-none focus:ring-1 focus:ring-blue-400 cursor-pointer">
+                  <option value="relevance">Pertinence</option>
+                  <option value="price-high-low">Prix: High → Low</option>
+                  <option value="price-low-high">Prix: Low → High</option>
+                  <option value="newest">Nouveautés</option>
                 </select>
-                <ChevronDown className="w-4 h-4 text-gray-500" />
               </div>
             </div>
 
-            {/* Grille des produits */}
-            <div className="grid grid-cols-3 gap-8 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {current.map(product => (
-                <div key={product.id} className="group cursor-pointer">
-                  <div className="relative bg-gray-100 rounded-lg overflow-hidden aspect-square mb-3">
+                <div key={product.id} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer group">
+                  <div className="relative aspect-square overflow-hidden">
                     <img src={product.image} alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                    {product.stock === 'En rupture de stock' && <div className="absolute top-3 right-3 bg-red-500 text-white px-2 py-1 rounded text-xs font-medium">SOLD OUT</div>}
-                    {product.promotion && <div className="absolute top-3 left-3 bg-green-500 text-white px-2 py-1 rounded text-xs font-medium">SALE</div>}
+                    {product.stock === 'En rupture de stock' && (
+                      <div className="absolute top-3 right-3 bg-red-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow">SOLD OUT</div>
+                    )}
+                    {product.promotion && (
+                      <div className="absolute top-3 left-3 bg-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow">SALE</div>
+                    )}
                   </div>
-                  <div className="text-xs text-gray-500 mb-1">{product.brand}</div>
-                  <h3 className="font-medium text-sm text-gray-900 mb-2 h-10 overflow-hidden">{product.name}</h3>
-                  <div className="text-lg font-bold text-gray-900">DA {product.price}</div>
+                  <div className="p-4">
+                    <div className="text-xs text-gray-500 mb-1">{product.brand}</div>
+                    <h3 className="text-sm font-semibold text-gray-800 mb-2 line-clamp-2">{product.name}</h3>
+                    <div className="text-lg font-bold text-gray-900">DA {product.price}</div>
+                  </div>
                 </div>
               ))}
             </div>
 
-            {/* Pagination (seulement pour l'onglet TOUT) */}
+            {/* Pagination */}
             {totalPages > 1 && activeTab === 'tout' && (
-              <div className="flex items-center justify-center gap-4">
-                <button onClick={() => setPage(Math.max(1, page - 1))} disabled={page === 1} className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-900 hover:text-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed">
-                  <ChevronLeft className="w-4 h-4" />Previous
+              <div className="flex justify-center items-center gap-3 mt-8 flex-wrap">
+                <button onClick={() => setPage(Math.max(1, page - 1))} disabled={page === 1} className="flex items-center gap-1 px-3 py-1 rounded-full border hover:bg-gray-200 disabled:text-gray-400">
+                  <ChevronLeft className="w-4 h-4" />
                 </button>
-                <div className="flex items-center gap-2">
-                  {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
-                    let num = totalPages <= 5 ? i + 1 : page <= 3 ? i + 1 : page >= totalPages - 2 ? totalPages - 4 + i : page - 2 + i;
-                    return (
-                      <button key={num} onClick={() => setPage(num)} className={`px-3 py-1 text-sm font-medium rounded ${page === num ? 'bg-gray-900 text-white' : 'text-gray-900 hover:bg-gray-100'}`}>
-                        {num}
-                      </button>
-                    );
-                  })}
-                </div>
-                <button onClick={() => setPage(Math.min(totalPages, page + 1))} disabled={page === totalPages} className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-900 hover:text-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed">
-                  Next<ChevronRight className="w-4 h-4" />
+                {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
+                  let num = totalPages <= 5 ? i + 1 : page <= 3 ? i + 1 : page >= totalPages - 2 ? totalPages - 4 + i : page - 2 + i;
+                  return (
+                    <button key={num} onClick={() => setPage(num)} className={`px-3 py-1 rounded-full ${page === num ? 'bg-blue-600 text-white' : 'hover:bg-gray-200'}`}>
+                      {num}
+                    </button>
+                  );
+                })}
+                <button onClick={() => setPage(Math.min(totalPages, page + 1))} disabled={page === totalPages} className="flex items-center gap-1 px-3 py-1 rounded-full border hover:bg-gray-200 disabled:text-gray-400">
+                  <ChevronRight className="w-4 h-4" />
                 </button>
               </div>
             )}
-
-            {/* Message pour les onglets limités */}
-            {activeTab !== 'tout' && current.length === 5 && (
-              <div className="text-center py-8 bg-gray-50 rounded-lg">
-                <div className="text-gray-600 mb-2">Affichage limité à 5 produits</div>
-                <button 
-                  onClick={() => handleTabChange('tout')} 
-                  className="text-blue-600 hover:text-blue-800 font-medium underline"
-                >
-                  Voir tous les produits
-                </button>
-              </div>
-            )}
-
-            {/* Message quand aucun produit */}
-            {filtered.length === 0 && (
-              <div className="text-center py-12">
-                <div className="text-gray-500 mb-4">No products found with current filters</div>
-                <button onClick={clear} className="px-6 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors text-sm font-medium">Clear all filters</button>
-              </div>
-            )}
-          </div>
+          </main>
         </div>
       </div>
     </>
