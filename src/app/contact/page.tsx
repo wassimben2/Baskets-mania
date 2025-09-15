@@ -1,6 +1,6 @@
 // src/app/contact/page.tsx
 import Navbar from '../components/navbar';
-
+import Footer from '../components/Footer';
 export default function ContactPage() {
   return (
     <>
@@ -127,6 +127,7 @@ export default function ContactPage() {
         {/* Effet de parallaxe en bas */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-100 to-transparent pointer-events-none"></div>
       </div>
+      
     </>
   );
 }
