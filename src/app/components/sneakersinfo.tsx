@@ -129,7 +129,7 @@ Est-ce que ta9der tconfirmili ida disponible ? Merci d'avance.`;
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-orange-50 p-4 relative overflow-hidden">
+    <div className="min-h-screen  bg-gradient-to-br from-slate-50 via-gray-50 to-orange-50 p-4 relative overflow-hidden">
       {/* Background Elements */}
       <div 
         className="absolute inset-0 opacity-[0.02]" 
@@ -240,7 +240,7 @@ Est-ce que ta9der tconfirmili ida disponible ? Merci d'avance.`;
                 <img
                   src={selectedImage}
                   alt={name}
-                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover "
                   key={selectedImage}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -252,7 +252,7 @@ Est-ce que ta9der tconfirmili ida disponible ? Merci d'avance.`;
                     <button
                       key={index}
                       onClick={() => handleImageSelect(image)}
-                      className={`flex-shrink-0 w-20 h-20 rounded-2xl overflow-hidden border-3 transition-all duration-300 hover:scale-110 shadow-lg ${
+                      className={`flex-shrink-0 w-20 h-20 rounded-2xl overflow-hidden border-3  shadow-lg ${
                         selectedImage === image
                           ? "border-gradient-to-r from-red-500 to-orange-500 shadow-xl scale-105"
                           : "border-gray-200 hover:border-gray-400 hover:shadow-xl"

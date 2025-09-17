@@ -7,12 +7,12 @@ import Link from 'next/link';
 
 const products = [
   // --- Ton tableau products inchangé ---
-   { id: 1, name: 'Air Jordan 1 LOW concord', price: 12000, image: 'Air Jordan 1 LOW concord/1.webp', stock: 'Promotion', sales: 1250, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
+   { id: 1, name: 'Air Jordan 1 LOW concord', price: 12000, image: 'Air Jordan 1 LOW concord/1.png', stock: 'Promotion', sales: 1250, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
   { id: 2, name: 'Air Jordan 1 High OG "Space Jam"', price: 11800, image: '	Air Jordan 1 High OG Space Jam/1.webp', stock: 'Promotion', sales: 890, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
   { id: 3, name: 'Jordan 1 low green', price: 11800, image: 'Jordan 1 low green/1.avif', stock: 'Promotion', sales: 756, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
 
   { id: 4, name: 'Air Jordan 1 low Panda', price: 13200, image: 'Air Jordan 1 low Panda/1.png', stock: 'Épuisé', sales: 1100, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
-  { id: 5, name: 'Air Jordan 1 high Stage haze', price: 12500, image: 'Air Jordan 1 high Stage haze/1.webp', stock: 'En stock', sales: 980, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
+  { id: 5, name: 'Air Jordan 1 high Stage haze', price: 12500, image: 'Air Jordan 1 high Stage haze/1.png', stock: 'En stock', sales: 980, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
   { id: 6, name: 'Air Jordan 1 High OG « Black Toe » 2025', price: 12800, image: 'Air Jordan 1 High OG « Black Toe » 2025/1.png', stock: 'En stock', sales: 1340, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
   { id: 7, name: 'Air Jordan 1 Mid White', price: 12800, image: 'Air Jordan 1 Mid White/1.png', stock: 'Promotion', sales: 1180, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
   { id: 8, name: 'Jordan 1 low wolf grey', price: 12500, image: 'Jordan 1 low wolf grey/1.avif', stock: 'Promotion', sales: 920, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
@@ -28,16 +28,16 @@ const products = [
 
  
   { id: 15, name: 'Air Jordan 11 LEGEND BLUE', price: 12800, image: 'Air Jordan 11 LEGEND BLUE/1.webp', stock: 'Épuisé', sales: 780, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 11', category: 'adulte' },
-  { id: 16, name: 'Air Jordan 11 72-10', price: 12990, image: 'Air Jordan 11 72-10/1.webp', stock: 'En stock', sales: 890, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 11', category: 'adulte' },
+  { id: 16, name: 'Air Jordan 11 72-10', price: 12990, image: 'Air Jordan 11 72-10/1.png', stock: 'En stock', sales: 890, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 11', category: 'adulte' },
   { id: 17, name: 'Air Jordan 1 High Lost and Found', price: 12800, image: 'Air Jordan 1 High Lost and Found/1.jpg', stock: 'En stock', sales: 650, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
   { id: 18, name: 'Air Jordan 1 High X DIOR', price: 12800, image: 'Air Jordan 1 High X DIOR/1.jpg', stock: 'Promotion', sales: 720, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
   { id: 19, name: 'Air Jordan 1 High Mocha', price: 12800, image: 'Air Jordan 1 High Mocha/1.avif', stock: 'En stock', sales: 580, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
   { id: 20, name: 'Air Jordan 1 Low « Ice Blue »', price: 11800, image: 'Air Jordan 1 Low « Ice Blue »/1.jpg', stock: 'Épuisé', sales: 560, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
   { id: 21, name: 'Jordan 11 Retro', price: 12990, image: 'Jordan 11 Retro/1.webp', stock: 'Promotion', sales: 480, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 11', category: 'adulte' },
-  { id: 22, name: 'Air Jordan 1 Retro Low OG UNC', price: 12500, image: 'Air Jordan 1 Retro Low OG UNC/1.webp', stock: 'Épuisé', sales: 420, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
+  { id: 22, name: 'Air Jordan 1 Retro Low OG UNC', price: 12500, image: 'Air Jordan 1 Retro Low OG UNC/1.png', stock: 'Épuisé', sales: 420, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
   { id: 23, name: 'Jordan 1 High bred toe', price: 12800, image: 'Jordan 1 High bred toe/1.webp', stock: 'Promotion', sales: 380, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
   { id: 24, name: 'Air Jordan 1 high OG Starfish', price: 12800, image: 'Air Jordan 1 high OG Starfish/1.avif', stock: 'En stock', sales: 340, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
-  { id: 25, name: 'Air Jordan 1', price: 12700, image: 'Air Jordan 1/1.avif', stock: 'Épuisé', sales: 290, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
+  { id: 25, name: 'Jordan 1 High OG Patent bred', price: 12700, image: 'Jordan 1 High OG Patent bred/1.webp', stock: 'Épuisé', sales: 290, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
   { id: 26, name: 'Air Jordan 4 OREO', price: 11500, image: 'Air Jordan 4 OREO/1.avif', stock: 'Promotion', sales: 890, promotion: true, brand: 'Air Jordan', model: 'Air Jordan 4', category: 'adulte' },
   { id: 27, name: 'Air Jordan 1 High 85', price: 12500, image: 'Air Jordan 1 High 85/1.avif', stock: 'En stock', sales: 670, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
   { id: 28, name: 'Jordan 11 retro CONCORD', price: 12800, image: 'Jordan 11 retro CONCORD/1.jpg', stock: 'Épuisé', sales: 450, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 11', category: 'adulte' },
@@ -46,12 +46,12 @@ const products = [
   { id: 31, name: 'Jordan 1 High lucky green', price: 12800, image: 'Jordan 1 High lucky green/1.avif', stock: 'En stock', sales: 580, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
   { id: 32, name: 'Air Jordan 5 Shattered Backboard', price: 11800, image: 'Air Jordan 5 Shattered Backboard/1.webp', stock: 'Épuisé', sales: 360, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 5', category: 'adulte' },
   { id: 33, name: 'Air Jordan 11 SPACE JAM', price: 12990, image: 'Air Jordan 11 SPACE JAM/1.jpg', stock: 'Épuisé', sales: 890, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 11', category: 'adulte' },
-  { id: 34, name: 'Air Jordan 11 OG BRED', price: 12990, image: 'Air Jordan 11 OG BRED/1.webp', stock: 'Épuisé', sales: 670, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 11', category: 'adulte' },
+  { id: 34, name: 'Air Jordan 11 OG BRED', price: 12990, image: 'Air Jordan 11 OG BRED/1.png', stock: 'Épuisé', sales: 670, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 11', category: 'adulte' },
   { id: 35, name: 'Air Jordan 4 PALE CITRON', price: 12500, image: 'Air Jordan 4 PALE CITRON/1.webp', stock: 'Épuisé', sales: 450, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 4', category: 'adulte' },
   { id: 36, name: 'Air Jordan 4 x SB', price: 12500, image: 'Air Jordan 4 x SB/1.avif', stock: 'Épuisé', sales: 320, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 4', category: 'adulte' },
   { id: 37, name: 'Air Jordan 4 pure money', price: 12500, image: 'Air Jordan 4 pure money/1.jpg', stock: 'En stock', sales: 280, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 4', category: 'adulte' },
   { id: 38, name: 'Air jordan 3 retro blue unc', price: 12900, image: 'Air jordan 3 retro blue unc/1.avif', stock: 'Épuisé', sales: 250, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 3', category: 'adulte' },
-  { id: 39, name: 'Air Jordan 11 GRATITUDE', price: 12900, image: 'Air Jordan 11 GRATITUDE/1.webp', stock: 'Épuisé', sales: 200, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 11', category: 'adulte' },
+  { id: 39, name: 'Air Jordan 11 GRATITUDE', price: 12900, image: 'Air Jordan 11 GRATITUDE/1.png', stock: 'Épuisé', sales: 200, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 11', category: 'adulte' },
   { id: 40, name: 'Air Jordan 1 High Palomino', price: 12800, image: 'Air Jordan 1 High Palomino/1.avif', stock: 'Épuisé', sales: 180, promotion: false, brand: 'Air Jordan', model: 'Air Jordan 1', category: 'adulte' },
 
     //ENFANTS
@@ -65,7 +65,7 @@ const products = [
     { id: 45, name: 'CHAUSSETTES NIKE BLANCHES', price: 300, image: 'https://basketsmania.com/cdn/shop/files/48ba1a6af6ab136ce45bc20a4b0cffdc.jpg?v=1739305972&width=990', category: 'accessoire', stock: 'En stock', sales: 0, promotion: false, brand: 'Nike', model: 'Chaussettes' },
     { id: 46, name: 'CHAUSSETTES NIKE NOIRES', price: 300, image: 'https://basketsmania.com/cdn/shop/files/6af0ca7385cba79eccf7ba4edf433067.jpg?v=1739306118&width=990', category: 'accessoire', stock: 'En stock', sales: 0, promotion: false, brand: 'Nike', model: 'Chaussettes' },
 
-
+   
 
   // ...
 ];

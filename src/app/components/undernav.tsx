@@ -26,7 +26,7 @@ export default function Undernav() {
   }, [images.length]);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full h-screen overflow-hidden lobster-regular">
       {/* Images de fond qui défilent */}
       <div className="absolute inset-0">
         {images.map((src, index) => (
@@ -53,10 +53,10 @@ export default function Undernav() {
         </div>
 
         {/* Titre principal */}
-        <h1 className="font-extrabold text-5xl md:text-6xl lg:text-7xl mb-4 text-white drop-shadow-2xl leading-tight">
+        <h1 className="font-extrabold font-jetbrains text-5xl md:text-6xl lg:text-7xl mb-4 text-white drop-shadow-2xl leading-tight">
           Trouvez Vos
           <br />
-          <span className="bg-gradient-to-r from-[#c68642] to-[#f4a460] bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r text-amber-400 bg-clip-text ">
             Sneakers
           </span>
           <br />
@@ -72,7 +72,7 @@ export default function Undernav() {
         {/* Boutons */}
         <div className="flex flex-col sm:flex-row gap-4">
           <Link href="/sneakerss">
-            <button className="group relative px-8 py-4 bg-gradient-to-r from-[#c68642] to-[#f4a460] text-white font-bold text-lg rounded-2xl shadow-2xl hover:shadow-[#c68642]/25 transform hover:scale-105 transition-all duration-300 overflow-hidden">
+            <button className="group relative px-8 py-4  bg-amber-500 text-white font-bold text-lg rounded-2xl shadow-2xl  transform hover:scale-105 transition-all duration-300 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-[#f4a460] to-[#c68642] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="relative flex items-center gap-3">
                 Découvrir la Collection

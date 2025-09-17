@@ -33,7 +33,7 @@ export default function AfficherCommandes() {
   if (commandes.length === 0) return <p>Aucune commande pour le moment.</p>;
 
   return (
-    <div className="p-4">
+    <div className="p-4 bg-yellow-500">
       <h2 className="text-2xl font-bold mb-4">Toutes les commandes</h2>
       <table className="table-auto border-collapse border border-gray-300 w-full">
         <thead>
